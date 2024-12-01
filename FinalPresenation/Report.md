@@ -97,9 +97,9 @@
 
 ---
 
-### **Phase 3: Critical Applications (ERP)**
+### **Phase 3: Critical Applications (ERP and E-commerce)**
 
-- **Objective:** Migrate and modernize critical business applications like ERP platforms to Azure.
+- **Objective:** Migrate and modernize critical business applications like ERP and e-commerce platforms to Azure.
 
 #### **Steps:**
 
