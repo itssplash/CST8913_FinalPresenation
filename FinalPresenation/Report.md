@@ -469,10 +469,13 @@ Networking is an important aspect of VM security as a VM must be able to connect
 
 - [Azure Compliance Overview](https://learn.microsoft.com/en-us/azure/compliance/)
 - [CCCS Compliance: Regulatory Offering](https://learn.microsoft.com/en-us/compliance/regulatory/offering-cccs-medium)
+- [HIPPA Compliance: Offering](https://learn.microsoft.com/en-us/azure/compliance/offerings/offering-hipaa-us)
+- [Azure Policy: Overview](https://learn.microsoft.com/en-us/azure/governance/policy/overview)
 
 ### Encryption
 
 - [Azure Disk Encryption Overview](https://learn.microsoft.com/en-us/azure/virtual-machines/windows/disk-encryption-overview)
+- [Bitlocker Overview](https://learn.microsoft.com/en-us/windows/security/operating-system-security/data-protection/bitlocker/)
 
 ### Networking
 
