@@ -355,38 +355,42 @@ For legacy VM’s rehosting to IaaS, you must consider the compliance and securi
 
 - For VMs that are suffering from disasters such as regional outages, environmental disasters, and irreparable vulnerabilities, Disaster recovery is a security measure to consider.
 - For the company migration, apply Azure Site Recovery for VM replication failover.
-- For Azure Site Recovery, you must identify the source VM to replicate and the target resources that define the replicate.
-- For the target region, Canada East, US East, and US East2 are good choices.
-- Azure Site Recovery will automatically create the target resources for the target region such as storage, networks, and zones.
+- For Azure site recovery, you must identify the source VM to replicate and the target resources that define the replicate.
+- Canada East, US East, and US East2 are good choices for the target region.
+- Azure Site Recovery will automatically create the target resources for the target region, such as storage, networks, and zones.  
 - Lastly, set the replication policy, which states VM recovery point snapshot times.
-- For consistent availability and failover, use the default recovery point retention of once per day and turn app-consistent snapshot frequency off.
-- The reason behind this is that Azure app-consistent snapshots on the hour may take a snapshot of corrupted data if the snapshot occurs whilst transactions are in progress. It is preferable to set up app-snapshots to occur after an action is completed such as after a transaction.
+- For consistent availability and failover, use the default recovery point retention of once per day and turn the app consistent snapshot frequency off.
+- The reasoning is that Azure app-consistent snapshots on the hour may take a snapshot of corrupted data if the snapshot occurs while transactions are in progress. Set up app snapshots to transpire after an action is completed, such as a transaction, to prevent data loss and corruption. 
+
 
 #### Encryption:
 
-- Encryption for VMs can be applied to the disks and uses Azure Key Vault to store the encryption keys and secrets.
+- Encryption for VMs can be applied to the disks and uses Azure key vault to store the encryption keys and secrets.
 - In the case of server VMs, it can provide a measure of authentication by having specific roles such as administrators accessing certain decryption keys to VMs OS disk within Azure Key Vault.
 - Encryption can also be applied to the networking level to encrypt data in transit.
+- Azure uses BitLocker to encrypt the disk, verify the integrity of the VM disk and cock down compromised VMs. 
 
 #### Network:
 
 Networking is an important aspect of VM security as a VM must be able to connect to the public in a secure manner. A good mindset to secure networking is to privatize networks if possible. Azure supplies multiple services for secure VMs:
 
-- **Configure Network Access Control**: Limit VM connectivity to specified areas such as buildings.
-- **Azure Firewall**: Provides filtering of traffic and malware by blocking IP addresses (Layer 3) and analyzing vulnerable packets (Layer 7).
-- **Global Load Balancing**: Azure Traffic Manager as a DNS load balancer and VM connectivity by using VPNs.
+- **Configure Network Access Control**: Limit VM connectivity to specified areas such as specific buildings.  This can help limit the outside network access and limit the outside malicious forces trying to access the system. 
+- **Azure Firewall**: filters traffic and malware by blocking IP addresses (Layer 3) and analyzing vulnerable packets (Layer 7).  Blocking IP addresses can prevent repeated spam messaging or malicious threats from accessing your system. 
+- **Global Load Balancing**: Azure Traffic Manager as a DNS load balancer and VM connectivity using Virtual Private Networks (VPNs).
 
 #### Authorization/Compliance:
 
 - Configure IAM Roles and permissions for VM management (Administrator should have subscription management and read/write access. Developers should have read/write access and employee read access).
-- Azure VMs and services follow many compliance offerings to the cloud. For the migration of an e-commerce business, it is important to note if the primary region is Canada, to confirm compliance to Canadian laws and policies.
-- Azure has compliance offerings of Canadian Center for Cybersecurity (CCCS) for protected B assets such as an individual’s payment information.
+- Azure VMs and services follow many compliance offerings to the cloud, in the case of the migration of an e-commerce business, it is important to note if the primary region is Canada to confirm compliance with Canadian laws and policies.
+- Azure has compliance offerings from the Canadian Center for Cybersecurity (CCCS) for protected B assets, such as an individual’s payment information.
+- Azure also complies with the Health insurance and Portability Act (HIPPA) although it focuses on security within health services, it does mean that Azure must comply with data privacy and security when handling confidential data. 
 
 #### Anti-virus/Anti-Malware:
 
 - Azure offers **Microsoft Defender for VMs** as anti-malware software.
 - Using Microsoft Defender protects VMs by analyzing for malware or viruses and removing them from the affected system. It is yet another layer of security to protect the VMs.
-
+- Windows Defender can also analyze anomalies, brute force attacks, scripts and malicious processes.
+- Azure also supports 3rd party anti-malware applications such as Kaspersky offering additional services such as hardware cleanup and scheduled system checks.
 ---
 
 ## 2. Monolithic ERP, E-Commerce, and Database Cluster (Refactoring: PaaS)
