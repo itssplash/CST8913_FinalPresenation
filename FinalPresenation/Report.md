@@ -154,6 +154,7 @@
   - **Azure SQL Database** and other PaaS services.
   - **Storage** for both current and archived data.
   - **Additional services** like **AKS** and **Azure Functions** for modernization.
+
  | Resources                    | Details                                                                                                  | Estimated Monthly Cost |
 |------------------------------|----------------------------------------------------------------------------------------------------------|------------------------|
 | Compute (Virtual Machines)   | 150 VMs distributed across Canada Central, East US, and East US 2 regions for high availability. Type: D-series and E-series instances. Includes Availability Sets and Azure Site Recovery. | $137,874.00           |
