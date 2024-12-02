@@ -291,6 +291,7 @@ The execution step involves actual implementation of the planned migration activ
 
 ---
 
+
 ## Validation
 
 The most important part of validation is ensuring that the resources will function correctly after migration, the data integrity is preserved, and the performance baselines are met.
