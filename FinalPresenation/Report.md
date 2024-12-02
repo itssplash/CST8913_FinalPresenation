@@ -1,4 +1,9 @@
 # CST8913 - Migration Presentation
+---
+### Group Members - 
+
+- Aliasgar Husain - 41161727​ | Catherine Daigle – 41175118​ | Abhinav - 41129125​ | Yash Rajput​ | Jimish Gajjar - 41174142
+---
 
 ## Develop a Migration Strategy
 
